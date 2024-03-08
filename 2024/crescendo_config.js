@@ -91,17 +91,22 @@ var config_data = `
       "code": "tta",
       "type": "counter"
     },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Source<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
-    }
+    { "name": "Source Pickup",
+      "code": "src",
+      "type": "counter"
+    },
+    { "name": "Ground Pickup",
+      "code": "gin",
+      "type": "counter"
+    },
+    { "name": "Stage Blocks",
+      "code": "stgb",
+      "type": "counter"
+    },
+    { "name": "Speaker Blocks",
+      "code": "spkb",
+      "type": "counter"
+    },
   ],
   "endgame": [
     { "name": "Stage Timer",
@@ -127,28 +132,29 @@ var config_data = `
     }
   ],
   "postmatch": [
-    { "name": "Driver Skill",
-      "code": "ds",
-      "type": "radio",
-      "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
-      },
-      "defaultValue": "x"
+    { "name": "Died/Immobilized",
+      "code": "die",
+      "type": "bool"
     },
-    { "name": "Defense Rating",
-      "code": "dr",
+    { "name": "Tippy<br>(almost tipped over)",
+      "code": "tip",
+      "type": "bool"
+    },
+    { "name": "Dropped Notes (>2)",
+      "code": "dn",
+      "type": "bool"
+    },
+    { "name": "Accuracy Rating",
+      "code": "acr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
+        "1": "1 (bad)<br>",
+        "2": "2<br>",
+        "3": "3<br>",
+        "4": "4<br>",
+        "5": "5 (good)"
       },
-      "defaultValue": "x"
+      "defaultValue":"3"
     },
     { "name": "Speed Rating",
       "code": "sr",
@@ -162,22 +168,28 @@ var config_data = `
       },
       "defaultValue":"3"
     },
-    { "name": "Died/Immobilized",
-      "code": "die",
-      "type": "bool"
+        { "name": "Driver Skill",
+      "code": "ds",
+      "type": "radio",
+      "choices": {
+        "1": "Not Effective<br>",
+        "2": "Average<br>",
+        "3": "Very Effective<br>",
+        "4": "Not Observed"
+      },
+      "defaultValue": "x"
     },
-    { "name": "Tippy<br>(almost tipped over)",
-      "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Dropped Notes (>2)",
-      "code": "dn",
-      "type": "bool"
-    },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "type": "bool"
+    { "name": "Defense Rating",
+      "code": "dr",
+      "type": "radio",
+      "choices": {
+        "1": "Below Average<br>",
+        "2": "Average<br>",
+        "3": "Good<br>",
+        "4": "Excellent<br>",
+        "5": "Did not play defense"
+      },
+      "defaultValue": "x"
     },
     { "name": "Comments",
       "code": "co",
