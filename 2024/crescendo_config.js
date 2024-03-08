@@ -106,7 +106,7 @@ var config_data = `
     { "name": "Speaker Blocks",
       "code": "spkb",
       "type": "counter"
-    },
+    }
   ],
   "endgame": [
     { "name": "Stage Timer",
